@@ -62,13 +62,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_remix:
-    dependency: "direct main"
-    description:
-      name: flutter_remix
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.3"
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -76,6 +69,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.1.0"
+  flutter_tabler_icons:
+    dependency: "direct main"
+    description:
+      name: flutter_tabler_icons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter

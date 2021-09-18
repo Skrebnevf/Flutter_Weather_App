@@ -18,11 +18,11 @@ class CityView extends StatelessWidget {
           Text(
             '$city, $country',
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
+                fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black, shadows: [Shadow(color: Colors.black38, offset: Offset(2.0, 2.0), blurRadius: 9)]),
           ),
           Text(
             '${Util.getFormattedData(formattedDate)}',
-            style: TextStyle(fontSize: 15),
+            style: TextStyle(fontSize: 15, shadows: [Shadow(color: Colors.black38, offset: Offset(2.0, 2.0), blurRadius: 9)]),
           )
         ],
       ),

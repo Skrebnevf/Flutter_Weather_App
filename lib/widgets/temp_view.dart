@@ -18,19 +18,33 @@ class TempView extends StatelessWidget {
         Image.network(
           icon,
           scale: 0.4,
-          color: Colors.black,
         ),
         SizedBox(
           width: 15,
         ),
         Column(
           children: [
-            Text(
+            Container(
+                child: Text(
               '$temp °С',
-              style: TextStyle(fontSize: 54, color: Colors.black),
-            ),
+              style: TextStyle(
+                fontSize: 54,
+                color: Colors.black,
+                shadows: [
+                  Shadow(
+                      color: Colors.black38,
+                      offset: Offset(2.0, 2.0),
+                      blurRadius: 9)
+                ],
+              ),
+            )),
             Text('$discription',
-                style: TextStyle(fontSize: 18, color: Colors.black))
+                style: TextStyle(fontSize: 18, color: Colors.black, shadows: [
+                  Shadow(
+                      color: Colors.black38,
+                      offset: Offset(1.0, 1.5),
+                      blurRadius: 9)
+                ]))
           ],
         )
       ],

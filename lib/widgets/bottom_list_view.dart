@@ -14,7 +14,7 @@ class ButtomListView extends StatelessWidget {
         Text(
           '7 - Day Weather Forecast'.toUpperCase(),
           style: TextStyle(
-              fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
+              fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold, shadows: [Shadow(color: Colors.black38, offset: Offset(2.0, 2.0), blurRadius: 9)]),
         ),
         Container(
           height: 140,
@@ -24,7 +24,10 @@ class ButtomListView extends StatelessWidget {
               itemBuilder: (context, index) => Container(
                     width: MediaQuery.of(context).size.width / 2.7,
                     height: 160,
-                    color: Colors.black,
+                    decoration: BoxDecoration(color: Colors.red,
+                    boxShadow: [BoxShadow(color: Colors.black38, offset: Offset(3.0, 3.0), blurRadius: 3)],
+                    border: Border.all(color: Colors.red),
+                    borderRadius: BorderRadius.circular(20)),
                     child: forecastCard(snapshot, index),
                   ),
               separatorBuilder: (context, index) => SizedBox(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 import 'package:weather_app/api/weather_api.dart';
 import 'package:weather_app/models/weather_forecast_dayli.dart';
 import 'package:weather_app/screen/city_screen.dart';
@@ -24,21 +24,30 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
     if (widget.locationWeather != null) {
       forecastObject = Future.value(widget.locationWeather);
     }
-    // forecastObject.then((weather) {
-    //   print(weather.list![0].weather[0].main);
-    // });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.black,
-        title: Text('OpenWeatherMap'),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Text(
+          'OpenWeatherMap',
+          style: TextStyle(color: Colors.black, fontSize: 23, shadows: [
+            Shadow(
+                color: Colors.black38, offset: Offset(2.0, 2.0), blurRadius: 5)
+          ]),
+        ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.my_location),
+          icon: Icon(
+            TablerIcons.home,
+            color: Colors.red.shade400,
+            size: 29,
+          ),
           onPressed: () {
             setState(() {
               forecastObject = WeatherApi().fetchWeatherForecast();
@@ -47,7 +56,11 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.location_city),
+            icon: Icon(
+              TablerIcons.location,
+              color: Colors.red.shade400,
+              size: 31,
+            ),
             onPressed: () async {
               var tappedName = await Navigator.push(context,
                   MaterialPageRoute(builder: (context) {

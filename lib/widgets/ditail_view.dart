@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/models/weather_forecast_dayli.dart';
 import 'package:weather_app/utilities/forecast_util.dart';
+import 'package:weather_icons/weather_icons.dart';
 
 class DetailView extends StatelessWidget {
   final AsyncSnapshot<WeatherForecast> snapshot;
@@ -17,9 +18,9 @@ class DetailView extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Util.getItem(Icons.thermostat, preassure.round(), 'mm Hg'),
-        Util.getItem(Icons.cloud, humidity, '%'),
-        Util.getItem(Icons.linear_scale, wind.toInt(), 'm/s'),
+        Util.getItem(WeatherIcons.barometer, preassure.round(), 'mm Hg'),
+        Util.getItem(WeatherIcons.rain, humidity, '%'),
+        Util.getItem(WeatherIcons.wind_deg_0, wind.toInt(), 'm/s'),
       ],
     ));
   }
