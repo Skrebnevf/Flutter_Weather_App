@@ -9,17 +9,21 @@ import 'package:weather_app/widgets/ditail_view.dart';
 import 'package:weather_app/widgets/temp_view.dart';
 
 class WeatherForecastScreen extends StatefulWidget {
+  final locationWeather;
+  WeatherForecastScreen({this.locationWeather});
   @override
   _WeatherForecastScreenState createState() => _WeatherForecastScreenState();
 }
 
 class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
   late Future<WeatherForecast> forecastObject;
-  late String _cityName = 'London';
+  late String _cityName;
   @override
   void initState() {
     super.initState();
-    forecastObject = WeatherApi().fetchWeatherForecast(city: _cityName);
+    if (widget.locationWeather != null) {
+      forecastObject = Future.value(widget.locationWeather);
+    }
     // forecastObject.then((weather) {
     //   print(weather.list![0].weather[0].main);
     // });
@@ -29,6 +33,7 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         title: Text('OpenWeatherMap'),
         centerTitle: true,
@@ -88,11 +93,11 @@ class _WeatherForecastScreenState extends State<WeatherForecastScreen> {
                 );
               } else {
                 return Center(
-                  child: SpinKitDoubleBounce(
-                    color: Colors.black,
-                    size: 100,
-                  ),
-                );
+                    child: Text(
+                  'City not found\nPlease, enter correct city',
+                  style: TextStyle(fontSize: 25),
+                  textAlign: TextAlign.center,
+                ));
               }
             },
           )),

@@ -33,6 +33,7 @@ dependencies:
   intl: ^0.17.0
   weather_icons: ^3.0.0
   flutter_remix: ^0.0.1
+  geolocator: ^7.6.2
 
 dev_dependencies:
   flutter_test:
